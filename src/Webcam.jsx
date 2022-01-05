@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import Webcam from "react-webcam";
 
 
@@ -58,3 +58,5 @@ export const WebcamCapture = () => {
         </div>
     );
 };
+
+*/
