@@ -79,6 +79,7 @@
     .imgBox {
         display: grid;
         height: 100%;
+        margin: auto;
     }
 
     img  {
