@@ -54,10 +54,10 @@ export const WebcamCapture = () => {
             <div className="webcam-img">
                 <Webcam
                     audio={false}
-                    height={200}
+                    height={216}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={220}
+                    width={384}
                     videoConstraints={videoConstraints}
                     screenshotQuality={1}
                 />
