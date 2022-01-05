@@ -76,19 +76,9 @@
   
     }
 
-    .imgBox {
-        display: grid;
-        height: 100%;
-        margin: auto;
-    }
 
-    img  {
-        max-width: 100%;
-        max-height: 50vh;
-        margin: auto;
-    }
-/* 
-    @media (orientation: landscape){
+
+    @media (orientation: portrait){
         .my-img{
             width: 108px;
             height: 192px;
@@ -96,10 +86,9 @@
     }
 
   
-    @media (orientation: portrait){
+    @media (orientation: landscape){
         .my-img{
-            width: 108px;
-            height: 192px;
+            width: 192px;
+            height: 108px;
         }
     } 
-}*/
