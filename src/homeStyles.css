@@ -72,11 +72,15 @@
     {
     padding-top: 10%;
     }
-    .my-img{
-        width: 108px;
-        height: 192px;
+
+  
     }
 
+    img {
+        max-width:400px;
+        height:auto;
+    }
+/* 
     @media (orientation: landscape){
         .my-img{
             width: 108px;
@@ -90,5 +94,5 @@
             width: 108px;
             height: 192px;
         }
-    }
-}
+    } 
+}*/

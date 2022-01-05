@@ -65,7 +65,7 @@ export const WebcamCapture = () => {
                
             </div>
             <div>
-                {image === '' ? "" : <img className="my-img" src={image} width="192px" height="108px" alt='should be something' />}
+                {image === '' ? "" : <img className="my-img" src={image} alt='should be something' />}
             </div>
             
         </div>
