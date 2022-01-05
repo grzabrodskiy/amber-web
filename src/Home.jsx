@@ -64,8 +64,8 @@ export const WebcamCapture = () => {
                 />
                
             </div>
-            <div className="webcam-img" style={"display:flex"}>
-                {image === '' ? "" : <img src={image}   alt='should be something' />}
+            <div>
+                {image === '' ? "" : <img className="my-img" src={image} width="192px" height="108px" alt='should be something' />}
             </div>
             
         </div>
