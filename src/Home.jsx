@@ -15,24 +15,24 @@ const videoConstraints = {
     facingMode: "environment"
 };
  
-
-
 export const WebcamCapture = () => {
 
     const [imageSource,setImageSource]=useState('');
 
 
+    const [ imageHeight, setImageHeight ] = useState(null);
+    const [ imageWidth, setImageWidth ]   = useState(null);   
 
     const webcamRef = React.useRef(null);
 
-    
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot({width:3840, height:2160});
             setImageSource(imageSrc)
         }, []);
     
-    
+
+    const imgRef = React.createRef();
     
     return (
         <div className="webcam-container">
@@ -66,11 +66,23 @@ export const WebcamCapture = () => {
             </div>
             <div className='imgBox'>
                 {imageSource !== '' && 
+                <div>
                     <img 
                         className="my-img" 
                         src={imageSource} 
                         alt='should be something'
+                        ref={imgRef}
+                        onLoad={() =>{ setImageHeight(imgRef.current.naturalHeight); 
+                            setImageWidth(imgRef.current.naturalWidth); 
+                        }}
                     /> 
+                    { imageWidth &&
+                    <div 
+                        className="image_dimensions">
+                        Image size: {imageWidth} x {imageHeight}
+                    </div>
+                    }
+                </div>
                 }
             </div>            
         </div>
@@ -85,7 +97,7 @@ const Home = () => {
        
                 <div className="text">
                         <WebcamCapture/>
-                        
+       
                 </div>
 
         </div>
