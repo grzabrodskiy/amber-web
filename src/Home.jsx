@@ -17,37 +17,38 @@ const videoConstraints = {
  
 
 
-
-
 export const WebcamCapture = () => {
 
-    const [image,setImage]=useState('');
+    const [imageSource,setImageSource]=useState('');
+
+
+
     const webcamRef = React.useRef(null);
 
     
     const capture = React.useCallback(
         () => {
-        const imageSrc = webcamRef.current.getScreenshot({width:3840, height:2160});
-        setImage(imageSrc)
-        });
+            const imageSrc = webcamRef.current.getScreenshot({width:3840, height:2160});
+            setImageSource(imageSrc)
+        }, []);
     
     
     
     return (
         <div className="webcam-container">
             <div>
-                {image !== '' ?
+                {imageSource !== '' ?
                     <button onClick={(e) => {
-                        e.preventDefault();
-                        setImage('')
-                    }}
+                            e.preventDefault();
+                            setImageSource('')
+                        }}
                         className="webcam-btn">
                         Retake Image</button> :
                     <button onClick={(e) => {
                         e.preventDefault();
                         capture();
                     }}
-                        className="webcam-btn">Capture</button>
+                    className="webcam-btn">Capture</button>
                 }
             </div>
 
@@ -60,14 +61,18 @@ export const WebcamCapture = () => {
                     width={384}
                     videoConstraints={videoConstraints}
                     screenshotQuality={1}
-                    facingMode="environment"
                 />
                
             </div>
             <div className='imgBox'>
-                {image === '' ? "" : <img className="my-img" src={image} alt='should be something' />}
-            </div>
-            
+                {imageSource !== '' && 
+                    <img 
+                        className="my-img" 
+                        src={imageSource} 
+                        alt='should be something'
+                    /> 
+                }
+            </div>            
         </div>
     );
 };
